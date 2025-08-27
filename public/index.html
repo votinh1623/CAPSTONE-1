@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trình Tạo Câu Chuyện AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>✨ Trình Tạo Câu Chuyện AI ✨</h1>
+    
+    <form id="prompt-form">
+      <div class="form-container">
+        <input type="text" id="prompt" placeholder="Nhập câu chuyện của bạn..." required>
+        <button type="submit">Tạo Câu Chuyện</button>
+      </div>
+      
+      <div class="controls">
+        <div class="control-group">
+          <label for="steps">Chất lượng</label>
+          <select id="steps">
+            <option value="10">Nhanh</option>
+            <option value="20" selected>Tốt</option>
+            <option value="30">Tốt nhất</option>
+          </select>
+        </div>
+        
+        <div class="control-group">
+          <label for="num-images">Số ảnh</label>
+          <input type="number" id="num-images" min="1" max="8" value="4">
+        </div>
+        
+        <div class="control-group">
+          <label for="voice-select">Giọng đọc</label>
+          <select id="voice-select">
+            <option value="vi-VN-HoaiMyNeural">Hoài My (Nữ)</option>
+            <option value="vi-VN-MaiNeural">Mai (Nữ)</option>
+            <option value="vi-VN-NamMinhNeural">Nam Minh (Nam)</option>
+          </select>
+        </div>
+        
+        <button id="tts-btn" type="button">Đọc Câu Chuyện</button>
+      </div>
+    </form>
+    
+    <div id="loading" class="hidden">
+      <div class="loading-spinner"></div>
+      Đang tạo câu chuyện...
+    </div>
+    
+    <div id="result"></div>
+    
+    <div class="story-controls hidden" id="story-controls">
+      <button id="regenerate-btn">Tạo Lại Ảnh</button>
+      <button id="save-story-btn">Lưu Câu Chuyện</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
